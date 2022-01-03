@@ -34,8 +34,8 @@ function Sidebar() {
             </a>
             <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div className="bg-white py-2 collapse-inner rounded">
-                    <a className="collapse-item" href="buttons.html">Manu 1</a>
-                    <a className="collapse-item" href="cards.html">Manu 2</a>
+                    <a className="collapse-item" href="">Manu 1</a>
+                    <a className="collapse-item" href="">Manu 2</a>
                 </div>
             </div>
         </li>
@@ -48,10 +48,10 @@ function Sidebar() {
             <div id="collapseUtilities" className="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
                 <div className="bg-white py-2 collapse-inner rounded">
-                    <a className="collapse-item" href="utilities-color.html">YouTube video</a>
-                    <a className="collapse-item" href="utilities-border.html">DIY solution</a>
-                    <a className="collapse-item" href="utilities-animation.html">Fault codes and test </a>
-                    <a className="collapse-item" href="utilities-other.html">Programming</a>
+                    <a className="collapse-item" href="">YouTube video</a>
+                    <a className="collapse-item" href="">DIY solution</a>
+                    <a className="collapse-item" href="">Fault codes and test </a>
+                    <a className="collapse-item" href="">Programming</a>
                 </div>
             </div>
         </li>
@@ -68,24 +68,24 @@ function Sidebar() {
             <div id="collapsePages" className="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div className="bg-white py-2 collapse-inner rounded">
                     <h6 className="collapse-header">1</h6>
-                    <a className="collapse-item" href="login.html">2</a>
-                    <a className="collapse-item" href="register.html">3</a>
-                    <a className="collapse-item" href="forgot-password.html">4</a>
+                    <a className="collapse-item" href="">2</a>
+                    <a className="collapse-item" href="">3</a>
+                    <a className="collapse-item" href="">4</a>
                     <div className="collapse-divider"></div>
                     <h6 className="collapse-header">Other Pages:</h6>
-                    <a className="collapse-item" href="404.html">1</a>
-                    <a className="collapse-item" href="blank.html">2</a>
+                    <a className="collapse-item" href="">1</a>
+                    <a className="collapse-item" href="">2</a>
                 </div>
             </div>
         </li>
         <li className="nav-item">
-            <a className="nav-link" href="charts.html">
+            <a className="nav-link" href="">
                 <i className="fas fa-fw fa-chart-area"></i>
                 <span>Soon</span>
             </a>
         </li>
         <li className="nav-item">
-            <a className="nav-link" href="tables.html">
+            <a className="nav-link" href="">
                 <i className="fas fa-fw fa-table"></i>
                     <span>Soon</span>
             </a>

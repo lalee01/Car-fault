@@ -3,7 +3,7 @@ import './css/sb-admin-2.css'
 import './css/sb-admin-2.min.css'
 import Sidebar from './Component/Sidebar/Sidebar'
 import Content from './Component/Content/Content'
-import Topbar from './Component/Topbar/'
+import Topbar from './Component/Topbar/Topbar'
 
 function App() {
 
