@@ -1,9 +1,31 @@
-import react from 'react'
+import {useState,useEffect} from 'react'
 import './../../css/sb-admin-2.css'
 import './../../css/sb-admin-2.min.css'
 import './../../vendor/fontawesome-free/css/all.min.css'
+import axios from 'axios'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+  } from "react-router-dom";
 
 function Content() {
+
+    const [listPost , setListPost] = useState([])
+    const [selectedPost, setSelectedPost] = useState()
+
+    useEffect(()=>{
+        axios.get("http://localhost:3001/getposts").then((response) =>setListPost(response.data))
+        }
+      ,[])
+    
+    const postSelectorHandler=(event)=>{
+        event.prevent.default()
+        setSelectedPost(event.target.id)
+        console.log(selectedPost)
+    } 
+    
 
     return (
     <div className="container-fluid">
@@ -11,70 +33,26 @@ function Content() {
             <h1 className="h3 mb-0 text-gray-800">Homepage</h1>
         </div>
         <div className='row'>
+        {listPost.map((val)=>{
+            return (
             <div class="col-lg-6 mb-4">
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">{val.title} {val.manufacturer} {val.model} </h6>
                     </div>
                     <div class="card-body">
                         <div class="text-center">
-                            Kép
+                        <img style={{maxWidth: '30%'}} src={`//localhost:3001/${val.name[0]}`}></img>
                         </div>
-                        <p>Add some quality, svg illustrations to your project courtesy of 
-                            <a target="_blank" rel="nofollow" href="">unDraw</a>, a
-                            constantly updated collection of beautiful svg images that you can use
-                            completely free and without attribution!
+                        <p>{val.description}
                         </p>
-                        <a target="_blank" rel="nofollow" href="">Browse Illustrations on
-                                        unDraw &rarr;
-                        </a>
-                    </div>
-                </div>
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
-                    </div>
-                    <div class="card-body">
-                        <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce
-                            CSS bloat and poor page performance. Custom CSS classes are used to create
-                            custom components and custom utility classes.</p>
-                        <p class="mb-0">Before working with this theme, you should become familiar with the
-                            Bootstrap framework, especially the utility classes.</p>
+                        <Link id={val.postid} rel="nofollow" to={`//localhost:3001/post/${val.postid}`} onClick={postSelectorHandler}>Read More&rarr;
+                        </Link>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 mb-4">
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
-                    </div>
-                    <div class="card-body">
-                        <div class="text-center">
-                            Kép
-                        </div>
-                        <p>Add some quality, svg illustrations to your project courtesy of 
-                            <a target="_blank" rel="nofollow" href="">unDraw</a>, a
-                            constantly updated collection of beautiful svg images that you can use
-                            completely free and without attribution!
-                        </p>
-                        <a target="_blank" rel="nofollow" href="">Browse Illustrations on
-                                        unDraw &rarr;
-                        </a>
-                    </div>
-                </div>
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
-                    </div>
-                    <div class="card-body">
-                        <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce
-                            CSS bloat and poor page performance. Custom CSS classes are used to create
-                            custom components and custom utility classes.</p>
-                        <p class="mb-0">Before working with this theme, you should become familiar with the
-                            Bootstrap framework, especially the utility classes.</p>
-                    </div>
-                </div>
-            </div>
+            )
+        })}
         </div>
 
     </div>

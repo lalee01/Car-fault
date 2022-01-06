@@ -4,11 +4,19 @@ import './css/sb-admin-2.min.css'
 import Sidebar from './Component/Sidebar/Sidebar'
 import Content from './Component/Content/Content'
 import Topbar from './Component/Topbar/Topbar'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+  } from "react-router-dom";
+
 
 function App() {
 
   return (
     <div>
+        <Router>
         <body id="page-top">
             <div id="wrapper">
             <Sidebar/>
@@ -27,6 +35,7 @@ function App() {
                 </div>
             </div>
         </body>
+        </Router>
     </div>
 
   );
