@@ -10,10 +10,9 @@ import {
     Link,
   } from "react-router-dom";
 
-function Content() {
+function Content({setSelectedPost}) {
 
     const [listPost , setListPost] = useState([])
-    const [selectedPost, setSelectedPost] = useState()
 
     useEffect(()=>{
         axios.get("http://localhost:3001/getposts").then((response) =>setListPost(response.data))
@@ -21,17 +20,11 @@ function Content() {
       ,[])
     
     const postSelectorHandler=(event)=>{
-        event.prevent.default()
         setSelectedPost(event.target.id)
-        console.log(selectedPost)
     } 
     
 
     return (
-    <div className="container-fluid">
-        <div className="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 className="h3 mb-0 text-gray-800">Homepage</h1>
-        </div>
         <div className='row'>
         {listPost.map((val)=>{
             return (
@@ -46,16 +39,18 @@ function Content() {
                         </div>
                         <p>{val.description}
                         </p>
-                        <Link id={val.postid} rel="nofollow" to={`//localhost:3001/post/${val.postid}`} onClick={postSelectorHandler}>Read More&rarr;
-                        </Link>
+                        <Link to="/post"><div id={val.postid} class="btn btn-light btn-icon-split" onClick={postSelectorHandler}>
+                            <span class="icon text-white-50 noClick ">
+                                <i class="fas fa-arrow-right noClick"></i>
+                            </span>
+                            <span class="text noClick">Read More</span>
+                        </div></Link>
                     </div>
                 </div>
             </div>
             )
         })}
         </div>
-
-    </div>
     );
 }
   
