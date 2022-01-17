@@ -25,7 +25,7 @@ function Content({setSelectedPost}) {
     
 
     return (
-        <div className='row'>
+        <div className='row'> 
         {listPost.map((val)=>{
             return (
             <div class="col-lg-6 mb-4">
@@ -34,12 +34,12 @@ function Content({setSelectedPost}) {
                         <h6 class="m-0 font-weight-bold text-primary">{val.title} {val.manufacturer} {val.model} </h6>
                     </div>
                     <div class="card-body">
-                        <div class="text-center">
-                        <img style={{maxWidth: '30%'}} src={`//localhost:3001/${val.name[0]}`}></img>
+                          <div class="text-center">
+                        <img style={{maxWidth: '30%'}}src={`//localhost:3001/${val.name[0]}`}></img>
                         </div>
                         <p>{val.description}
                         </p>
-                        <Link to="/post"><div id={val.postid} class="btn btn-light btn-icon-split" onClick={postSelectorHandler}>
+                        <Link to="/post"><div id={val.postid} class="btn btn-light btn-icon-split"onClick={postSelectorHandler}>
                             <span class="icon text-white-50 noClick ">
                                 <i class="fas fa-arrow-right noClick"></i>
                             </span>
@@ -49,7 +49,7 @@ function Content({setSelectedPost}) {
                 </div>
             </div>
             )
-        })}
+        })} 
         </div>
     );
 }

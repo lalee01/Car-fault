@@ -1,21 +1,7 @@
-import react from 'react';
-import ReactDOM from "react-dom";
 import './App.css';
 import Homepage from './Component/Homepage/Homepage'
-import SinglePostPage from './Component/SinglePostPage/SinglePostPage'
-import {
-    BrowserRouter,
-    Routes,
-    Route,
-    Link
-  } from "react-router-dom";
+import Login from './Component/Login/Login.tsx'
 
-function App() {
-    
-
-  return (
-            <Homepage />
-  );
-}
+const App = () => <Login/>
 
 export default App;
