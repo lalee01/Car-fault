@@ -17,8 +17,6 @@ function Content({selectedPost}) {
         axios.get(`http://localhost:3001/post/${selectedPost}`).then((response) =>setListPost(response.data))
         }
       ,[])
-        console.log("SinglePage")
-        console.log(selectedPost)
     return (
         <div className='row'>
         {listPost.map((val)=>{

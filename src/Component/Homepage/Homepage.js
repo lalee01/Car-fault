@@ -1,4 +1,4 @@
-import {useState}  from 'react'
+import {useState , useContext}  from 'react'
 import './../../App.css'
 import './../../css/sb-admin-2.css'
 import './../../css/sb-admin-2.min.css'
@@ -31,10 +31,9 @@ import {
                             <Routes>
                                 <Route path="/"element={<Content setSelectedPost={setSelectedPost}/>}/>
                                 <Route path="/post" element={<SinglePostPage selectedPost={selectedPost}/>}/>
-                            </Routes>
-                                                                              
+                            </Routes>                               
                         </div> 
-                    </div>
+                    </div> 
                     <footer class="sticky-footer bg-white">
                         <div class="container my-auto"> 
                             <div class="copyright text-center my-auto">
