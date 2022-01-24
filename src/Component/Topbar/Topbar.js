@@ -1,25 +1,22 @@
-import { useState , useContext } from 'react'
+import { useState } from 'react'
 import './../../css/sb-admin-2.css'
 import './../../css/sb-admin-2.min.css'
 import './../../vendor/fontawesome-free/css/all.min.css'
 import '../../vendor/jquery/jquery.min.js'
 import '../../vendor/bootstrap/js/bootstrap.bundle.min.js'
 import GoogleLogin, { GoogleLogout } from 'react-google-login'
-import userInfoContext from '../Login/Login.tsx'
 
 function Topbar() {
-    //const [user,setUser] = useState('')
- const user = useContext(userInfoContext)
-
- console.log(user)
-
+    const [userInfo , setUserInfo] = useState({
+        profileObj:{
+            name:''
+        }      
+    })
     return (                       
         <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-            <GoogleLogin clientId="631569155937-29nbo6s1ef26apovtsdjp891pdkjq902.apps.googleusercontent.com" onSuccess={console.log('Logged')}
-                isSignedIn={true} style={{display:'block'}}
-                render={()=> ( 
-                    <button className="btn btn-google btn-user btn-block" style={{display:'none'}}/>
-                )}
+            <GoogleLogin clientId="631569155937-29nbo6s1ef26apovtsdjp891pdkjq902.apps.googleusercontent.com" onSuccess={setUserInfo}
+                isSignedIn={true}
+                render={()=> <div />}
             />
             <button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3">
                 <i className="fa fa-bars"></i>
@@ -164,7 +161,9 @@ function Topbar() {
                 <li className="nav-item dropdown no-arrow">
                     <a className="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span className="mr-2 d-none d-lg-inline text-gray-600 small">{user}</span>
+                        <img src={userInfo.profileObj.imageUrl} className="rounded-full" style={{width:'30px'}} />
+                        <br></br>
+                        <span className="mr-2 d-none d-lg-inline text-gray-600 small" style={{fontSize:'15px', fontWeight:'bold'}}>{userInfo.profileObj.name}</span>
                     </a>
                     <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                         aria-labelledby="userDropdown">

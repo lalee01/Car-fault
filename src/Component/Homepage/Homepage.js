@@ -1,4 +1,4 @@
-import {useState , useContext}  from 'react'
+import { useState } from 'react'
 import './../../App.css'
 import './../../css/sb-admin-2.css'
 import './../../css/sb-admin-2.min.css'
@@ -6,6 +6,7 @@ import Sidebar from './../Sidebar/Sidebar'
 import Content from './../Content/Content'
 import Topbar from './../Topbar/Topbar'
 import SinglePostPage from './../SinglePostPage/SinglePostPage'
+import YoutubePost from '../YoutubePost/YoutubePost'
 import {
     BrowserRouter,
     Routes,
@@ -21,7 +22,7 @@ import {
         <body id="page-top">
             <div id="wrapper">
             <Sidebar/>
-                <div id="content-wrapper"class="d-flex flex-column">
+                <div id="content-wrapper" className="d-flex flex-column">
                     <div id="content">
                         <Topbar/>
                         <div className="container-fluid">
@@ -31,12 +32,13 @@ import {
                             <Routes>
                                 <Route path="/"element={<Content setSelectedPost={setSelectedPost}/>}/>
                                 <Route path="/post" element={<SinglePostPage selectedPost={selectedPost}/>}/>
+                                <Route path="/yt" element={<YoutubePost/>}/>
                             </Routes>                               
                         </div> 
                     </div> 
-                    <footer class="sticky-footer bg-white">
-                        <div class="container my-auto"> 
-                            <div class="copyright text-center my-auto">
+                    <footer className="sticky-footer bg-white">
+                        <div className="container my-auto"> 
+                            <div className="copyright text-center my-auto">
                                 <span>Copyright &copy; Your Website 2021</span>
                             </div>
                         </div>

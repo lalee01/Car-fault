@@ -17,7 +17,7 @@ function Sidebar() {
         </a>
         <hr className="sidebar-divider my-0"/>
         <li className="nav-item active">
-            <a className="nav-link" href="">
+            <a className="nav-link" href="/">
                 <i className="fas fa-fw fa-tachometer-alt"></i>
                 <span>Homepage</span>
             </a>
@@ -34,8 +34,18 @@ function Sidebar() {
             </a>
             <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div className="bg-white py-2 collapse-inner rounded">
-                    <a className="collapse-item" href="">Manu 1</a>
-                    <a className="collapse-item" href="">Manu 2</a>
+                    <a className="collapse-item" href="/">Audi</a>
+                    <a className="collapse-item" href="/">BMW</a>
+                    <a className="collapse-item" href="/">Citroen</a>
+                    <a className="collapse-item" href="/">Fiat</a>
+                    <a className="collapse-item" href="/">Ford</a>
+                    <a className="collapse-item" href="/">Mazda</a>
+                    <a className="collapse-item" href="/">Mercedes</a>
+                    <a className="collapse-item" href="/">Opel</a>
+                    <a className="collapse-item" href="/">Peugeot</a>
+                    <a className="collapse-item" href="/">Renault</a>
+                    <a className="collapse-item" href="/">Seat</a>
+                    <a className="collapse-item" href="/">VW</a>
                 </div>
             </div>
         </li>
@@ -48,10 +58,10 @@ function Sidebar() {
             <div id="collapseUtilities" className="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
                 <div className="bg-white py-2 collapse-inner rounded">
-                    <a className="collapse-item" href="">YouTube video</a>
-                    <a className="collapse-item" href="">DIY solution</a>
-                    <a className="collapse-item" href="">Fault codes and test </a>
-                    <a className="collapse-item" href="">Programming</a>
+                    <a className="collapse-item" href="/yt">YouTube video</a>
+                    <a className="collapse-item" href="/diy">DIY solution</a>
+                    <a className="collapse-item" href="/dtc">Fault codes and test </a>
+                    <a className="collapse-item" href="/p">Programming</a>
                 </div>
             </div>
         </li>
@@ -68,24 +78,24 @@ function Sidebar() {
             <div id="collapsePages" className="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div className="bg-white py-2 collapse-inner rounded">
                     <h6 className="collapse-header">1</h6>
-                    <a className="collapse-item" href="">2</a>
-                    <a className="collapse-item" href="">3</a>
-                    <a className="collapse-item" href="">4</a>
+                    <a className="collapse-item" href="/">2</a>
+                    <a className="collapse-item" href="/">3</a>
+                    <a className="collapse-item" href="/">4</a>
                     <div className="collapse-divider"></div>
                     <h6 className="collapse-header">Other Pages:</h6>
-                    <a className="collapse-item" href="">1</a>
-                    <a className="collapse-item" href="">2</a>
+                    <a className="collapse-item" href="/">1</a>
+                    <a className="collapse-item" href="/">2</a>
                 </div>
             </div>
         </li>
         <li className="nav-item">
-            <a className="nav-link" href="">
+            <a className="nav-link" href="/">
                 <i className="fas fa-fw fa-chart-area"></i>
                 <span>Soon</span>
             </a>
         </li>
         <li className="nav-item">
-            <a className="nav-link" href="">
+            <a className="nav-link" href="/">
                 <i className="fas fa-fw fa-table"></i>
                     <span>Soon</span>
             </a>

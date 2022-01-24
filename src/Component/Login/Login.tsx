@@ -1,9 +1,9 @@
+import { useState } from 'react'
 import './../../css/sb-admin-2.css'
 import './../../css/sb-admin-2.min.css'
 import './../../vendor/fontawesome-free/css/all.min.css'
 import '../../vendor/jquery/jquery.min.js'
 import '../../vendor/bootstrap/js/bootstrap.bundle.min.js'
-import { useState , createContext , useContext} from "react";
 import axios, { AxiosResponse } from "axios";
 import {GoogleLogin} from "react-google-login";
 import Homepage from '../Homepage/Homepage'
@@ -25,7 +25,6 @@ interface AuthResponse {
 function Login() {
 
     const [user, setUser] = useState<User | null>(null);
-    const userInfoContext = createContext(user);
     const onSuccess = async (res: any) => {
       try {
         const result: AxiosResponse<AuthResponse> = await axios.post("http://localhost:3001/auth", {
@@ -36,8 +35,7 @@ function Login() {
         console.log(err);
       }
     }
-    const userTest = useContext(userInfoContext)
-    console.log(userTest)
+    
     return(
         <body className="bg-gradient-primary" style={{minHeight:'100vh'}}>
       {!user && (
@@ -57,8 +55,8 @@ function Login() {
                                                 <hr/>
                                                 <GoogleLogin clientId="631569155937-29nbo6s1ef26apovtsdjp891pdkjq902.apps.googleusercontent.com" 
                                                     onSuccess={onSuccess}
-                                                    isSignedIn={true} 
-                                                    render={renderProps => ( 
+                                                    isSignedIn={true}
+                                                    render={renderProps => (
                                                         <button className="btn btn-google btn-user btn-block" 
                                                             onClick={renderProps.onClick} 
                                                             disabled={renderProps.disabled}>
@@ -81,10 +79,8 @@ function Login() {
             </div>
             )}
             {user && (
-                <>
-                    <userInfoContext.Provider value={user}>
-                    <Homepage/>
-                    </userInfoContext.Provider>
+                <> 
+                    <Homepage />
                 </>
               )} 
         </body>
