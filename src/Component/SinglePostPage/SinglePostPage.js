@@ -17,48 +17,55 @@ function Content({selectedPost}) {
         axios.get(`http://localhost:3001/post/${selectedPost}`).then((response) =>setListPost(response.data))
         }
       ,[])
+
     return (
-        <div className='row'>
+        <div classNameName='row'>
         {listPost.map((val)=>{
             return (
-            <div class="col-lg-13 mb-4">
-                  <div class="card shadow mb-4">
-                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">{val.title} {val.manufacturer} {val.model}</h6>
-                        <div class="dropdown no-arrow">
-                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+            <div className="col-lg-13 mb-4">
+                <div className="card shadow mb-4">
+                    <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 className="m-0 font-weight-bold text-primary">{val.title} {val.manufacturer} {val.model}</h6>
+                        <div className="dropdown no-arrow">
+                            <a className="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                    <i className="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                            <div className="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                     aria-labelledby="dropdownMenuLink">
-                                <div class="dropdown-header">Dropdown Header:</div>
-                                <a class="dropdown-item" href="#">Edit</a>
-                                <a class="dropdown-item" href="#">Upload photo</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <div className="dropdown-header">Dropdown Header:</div>
+                                <a className="dropdown-item" href="#">Edit</a>
+                                <a className="dropdown-item" href="#">Upload photo</a>
+                                <div className="dropdown-divider"></div>
+                                <a className="dropdown-item" href="#">Something else here</a>
                         </div>
                     </div>
-                </div>
-                                
-                <div class="card-body">
-                <div class="text-center">
-                    {val.name.map((key)=>{
-                        return(
-                            <img style={{maxWidth: '30%'}} src={`//localhost:3001/${key}`}></img>
-                        )
-                    })}
-                        </div><br></br>
-                                    Dropdown menus can be placed in the card header in order to extend the functionality
-                                    of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
-                                    icon in the card header can be clicked on in order to toggle a dropdown menu.
-                </div>
-                            
+                </div>                               
+                <div className="card-body">
+                    <div className="text-center my-4">
+                        {val.name.map((pic)=>{
+                            return(
+                                <img className="mx-1"style={{maxWidth: '30%'}} src={`//localhost:3001/${pic}`}></img>
+                            )
+                        })}
+                        {val.link.map((link)=>{
+                            return(
+                                <div>
+                                <iframe className="text-center my-4" width="800" height="400" src={`https://www.youtube.com/embed/${link}`}/>
+                                </div>
+                            )
+                        })}
+                        
+                    </div>
+                    Dropdown menus can be placed in the card header in order to extend the functionality
+                    of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
+                    icon in the card header can be clicked on in order to toggle a dropdown menu.
+                </div>      
                 </div>
             </div>
             )
         })}
-        </div>
+       </div>
 
     );
 }

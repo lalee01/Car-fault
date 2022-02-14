@@ -6,7 +6,7 @@ import Sidebar from './../Sidebar/Sidebar'
 import Content from './../Content/Content'
 import Topbar from './../Topbar/Topbar'
 import SinglePostPage from './../SinglePostPage/SinglePostPage'
-import YoutubePost from '../YoutubePost/YoutubePost'
+import Postpage from '../Postpage/Postpage'
 import {
     BrowserRouter,
     Routes,
@@ -32,7 +32,7 @@ import {
                             <Routes>
                                 <Route path="/"element={<Content setSelectedPost={setSelectedPost}/>}/>
                                 <Route path="/post" element={<SinglePostPage selectedPost={selectedPost}/>}/>
-                                <Route path="/yt" element={<YoutubePost/>}/>
+                                <Route path="/yt" element={<Postpage/>}/>
                             </Routes>                               
                         </div> 
                     </div> 
