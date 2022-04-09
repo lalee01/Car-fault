@@ -5,15 +5,14 @@ import './../../vendor/fontawesome-free/css/all.min.css'
 import axios from 'axios'
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
     useParams
   } from "react-router-dom";
 
 function Content() {
     const [listPost , setListPost] = useState([])
     const {postid} = useParams()
+
+    console.log(useParams())
 
     useEffect(()=>{
         axios.get(`${import.meta.VITE_ServerUrl}/post/${postid}`).then((response) =>setListPost(response.data))

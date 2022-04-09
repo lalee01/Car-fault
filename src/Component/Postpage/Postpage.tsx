@@ -72,8 +72,8 @@ function Postpage(){
     }
     return(
         <div >
-            <form class="user">
-                <div class="form-group row">
+            <form className="user">
+                <div className="form-group row">
                     <select className="col-sm-5" name="cars" id="cars" onClick={selectedManuHandler}>
                     <option value=""></option>
                         <option value="audi">Audi</option>
@@ -90,17 +90,17 @@ function Postpage(){
                         <option value="vw">VW</option>
                     </select>
                 </div>
-                <div class="col-sm-5">
-                    <input type='text' class="form-control form-control-user mt-3" placeholder="Model" onChange={modelHandler}/>
+                <div className="col-sm-5">
+                    <input type='text' className="form-control form-control-user mt-3" placeholder="Model" onChange={modelHandler}/>
                 </div>
-                <div class="col-sm-5">
-                    <input type='text' class="form-control form-control-user mt-3" placeholder="Title" onChange={titleHandler}/>
+                <div className="col-sm-5">
+                    <input type='text' className="form-control form-control-user mt-3" placeholder="Title" onChange={titleHandler}/>
                 </div>
-                <div class="col-sm-8">
-                <input type='text' class="form-control form-control-user mt-3" placeholder="Youtube link" onChange={ytLinkHander}/>
+                <div className="col-sm-8">
+                <input type='text' className="form-control form-control-user mt-3" placeholder="Youtube link" onChange={ytLinkHander}/>
                 </div>
-                <div class="col-sm-8">
-                <input type='text' class="form-control form-control-user mt-3" placeholder="Description" onChange={descriptionHandler}/>
+                <div className="col-sm-8">
+                <input type='text' className="form-control form-control-user mt-3" placeholder="Description" onChange={descriptionHandler}/>
                 </div>
                 <form method="post" action="#" id="#">
                     <div className="form-group files mt-3" >
