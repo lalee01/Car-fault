@@ -16,7 +16,7 @@ function Content() {
     const [listPost , setListPost] = useState([])
 
     useEffect(()=>{
-        axios.get(`${process.env.REACT_APP_ServerUrl}/getposts`).then((response) =>setListPost(response.data))
+        axios.get(`${import.meta.env.VITE_ServerUrl}/getposts`).then((response) =>setListPost(response.data))
         }
       ,[])
     return (
@@ -30,7 +30,7 @@ function Content() {
                     </div>
                     <div className="card-body">
                           <div className="text-center">
-                        <img style={{maxWidth: '30%'}}src={`${process.env.REACT_APP_ServerUrl}/${val.name[0]}`}></img>
+                        <img style={{maxWidth: '30%'}}src={`${import.meta.env.VITE_ServerUrl}/${val.name[0]}`}></img>
                         </div>
                         <p>{val.description}
                         </p>

@@ -1,9 +1,4 @@
 import { useState } from 'react'
-import './../../css/sb-admin-2.css'
-import './../../css/sb-admin-2.min.css'
-import './../../vendor/fontawesome-free/css/all.min.css'
-import '../../vendor/jquery/jquery.min.js'
-import '../../vendor/bootstrap/js/bootstrap.bundle.min.js'
 import axios, { AxiosResponse } from "axios";
 import {GoogleLogin} from "react-google-login";
 import Homepage from '../Homepage/Homepage'
@@ -27,7 +22,7 @@ function Login() {
     const [user, setUser] = useState<User | null>(null);
     const onSuccess = async (res: any) => {
       try {
-        const result: AxiosResponse<AuthResponse> = await axios.post(`${process.env.REACT_APP_ServerUrl}/auth`, {
+        const result: AxiosResponse<AuthResponse> = await axios.post(`${import.meta.env.VITE_ServerUrl}/auth`, {
           token: res?.tokenId,
         });
         setUser(result.data.user);
@@ -53,7 +48,7 @@ function Login() {
                                                 </div>
                                                 <form className="user">
                                                     <hr/>
-                                                    <GoogleLogin clientId={process.env.REACT_APP_ClientID} 
+                                                    <GoogleLogin clientId={import.meta.env.VITE_ClientID} 
                                                         onSuccess={onSuccess}
                                                         isSignedIn={true}
                                                         render={renderProps => (
