@@ -16,12 +16,12 @@ function Content() {
     const {postid} = useParams()
 
     useEffect(()=>{
-        axios.get(`${process.env.REACT_APP_ServerUrl}/post/${postid}`).then((response) =>setListPost(response.data))
+        axios.get(`${import.meta.VITE_ServerUrl}/post/${postid}`).then((response) =>setListPost(response.data))
         }
       ,[])
       console.log(listPost)
     return (
-        <div classNameName='row'>
+        <div className='row'>
         {listPost.map((val)=>{
             return (
             <div className="col-lg-13 mb-4">
@@ -47,7 +47,7 @@ function Content() {
                     <div className="text-center my-4">
                         {val.name.map((pic)=>{
                             return(
-                                <img className="mx-1" style={{maxWidth: '30%'}} src={`${process.env.REACT_APP_ServerUrl}/${pic}`}></img>
+                                <img className="mx-1" style={{maxWidth: '30%'}} src={`${import.meta.VITE_ServerUrl}/${pic}`}></img>
                             )
                         })}
                         {val.link.map((link)=>(

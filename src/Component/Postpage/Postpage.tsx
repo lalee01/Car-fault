@@ -39,7 +39,7 @@ function Postpage(){
         for(let i = 0; i < files.length; i++) {
             data.append('file', files[i]);
         }
-        Axios.post(`${process.env.REACT_APP_ServerUrl}/create`,{
+        Axios.post(`${import.meta.VITE_ServerUrl}/create`,{
             title: title,
             manufacturer: selectedManu,
             model: model,
@@ -53,7 +53,7 @@ function Postpage(){
                 console.log('Upload Error')
             })
 
-        Axios.post(`${process.env.REACT_APP_ServerUrl}/upload`, data)
+        Axios.post(`${import.meta.VITE_ServerUrl}/upload`, data)
             .then((response) => {
                 console.log(data)
                 onSuccess(response.data)
@@ -64,7 +64,7 @@ function Postpage(){
 
         for(let i = 0; i < files.length; i++) {
             console.log(files[i].name)
-            Axios.post(`${process.env.REACT_APP_ServerUrl}/uploaddb`,{
+            Axios.post(`${import.meta.VITE_ServerUrl}/uploaddb`,{
                 postid:postid,
                 name:files[i].name,
             })
