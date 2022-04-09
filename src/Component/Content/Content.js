@@ -3,6 +3,7 @@ import './../../css/sb-admin-2.css'
 import './../../css/sb-admin-2.min.css'
 import './../../vendor/fontawesome-free/css/all.min.css'
 import axios from 'axios'
+import { useParams } from 'react-router'
 import {
     BrowserRouter as Router,
     Switch,
@@ -10,21 +11,14 @@ import {
     Link,
   } from "react-router-dom";
 
-function Content({setSelectedPost}) {
+function Content() {
 
     const [listPost , setListPost] = useState([])
 
     useEffect(()=>{
-        axios.get("http://localhost:3001/getposts").then((response) =>setListPost(response.data))
-        //axios.get("http://localhost:3001/getyt").then((response) =>setListPost(response.data))
+        axios.get(`${process.env.REACT_APP_ServerUrl}/getposts`).then((response) =>setListPost(response.data))
         }
       ,[])
-    
-    const postSelectorHandler=(event)=>{
-        setSelectedPost(event.target.id)
-    } 
-    
-
     return (
         <div className='row'> 
         {listPost.map((val)=>{
@@ -36,11 +30,11 @@ function Content({setSelectedPost}) {
                     </div>
                     <div className="card-body">
                           <div className="text-center">
-                        <img style={{maxWidth: '30%'}}src={`//localhost:3001/${val.name[0]}`}></img>
+                        <img style={{maxWidth: '30%'}}src={`${process.env.REACT_APP_ServerUrl}/${val.name[0]}`}></img>
                         </div>
                         <p>{val.description}
                         </p>
-                        <Link to="/post"><div id={val.postid} className="btn btn-light btn-icon-split"onClick={postSelectorHandler}>
+                        <Link to={`/post/${val.postid}`}><div id={val.postid} className="btn btn-light btn-icon-split">
                             <span className="icon text-white-50 noClick ">
                                 <i className="fas fa-arrow-right noClick"></i>
                             </span>

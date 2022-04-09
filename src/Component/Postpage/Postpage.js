@@ -1,4 +1,4 @@
-import react ,{ useState} from 'react'
+import react ,{ useState } from 'react'
 import Axios from 'axios'
 import { uid } from 'uid'
 
@@ -35,26 +35,25 @@ function Postpage(){
     const submitHandler=(e)=>{
         e.preventDefault()
         const data = new FormData()
-        //const postid= uid(15)
+        const postid= uid(15)
         for(let i = 0; i < files.length; i++) {
             data.append('file', files[i]);
         }
-        Axios.post("http://localhost:3001/create",{
+        Axios.post(`${process.env.REACT_APP_ServerUrl}/create`,{
             title: title,
             manufacturer: selectedManu,
             model: model,
             description : description,
-            postid:'132465',
+            postid:postid,
             ytLink:ytLink
             }).then (()=>{
                 console.log("success")
-                console.log(ytLink)
             })
             .catch((e) => {
                 console.log('Upload Error')
             })
 
-        Axios.post('http://localhost:3001/upload', data)
+        Axios.post(`${process.env.REACT_APP_ServerUrl}/upload`, data)
             .then((response) => {
                 console.log(data)
                 onSuccess(response.data)
@@ -65,8 +64,8 @@ function Postpage(){
 
         for(let i = 0; i < files.length; i++) {
             console.log(files[i].name)
-            Axios.post("http://localhost:3001/uploaddb",{
-                postid:'132465',
+            Axios.post(`${process.env.REACT_APP_ServerUrl}/uploaddb`,{
+                postid:postid,
                 name:files[i].name,
             })
         }

@@ -34,18 +34,18 @@ function Sidebar() {
             </a>
             <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div className="bg-white py-2 collapse-inner rounded">
-                    <a className="collapse-item" href="/">Audi</a>
-                    <a className="collapse-item" href="/">BMW</a>
-                    <a className="collapse-item" href="/">Citroen</a>
-                    <a className="collapse-item" href="/">Fiat</a>
-                    <a className="collapse-item" href="/">Ford</a>
-                    <a className="collapse-item" href="/">Mazda</a>
-                    <a className="collapse-item" href="/">Mercedes</a>
-                    <a className="collapse-item" href="/">Opel</a>
-                    <a className="collapse-item" href="/">Peugeot</a>
-                    <a className="collapse-item" href="/">Renault</a>
-                    <a className="collapse-item" href="/">Seat</a>
-                    <a className="collapse-item" href="/">VW</a>
+                    <a className="collapse-item" href="/manufacturer/audi">Audi</a>
+                    <a className="collapse-item" href="/manufacturer/bmw">BMW</a>
+                    <a className="collapse-item" href="/manufacturer/citroen">Citroen</a>
+                    <a className="collapse-item" href="/manufacturer/fiat">Fiat</a>
+                    <a className="collapse-item" href="/manufacturer/ford">Ford</a>
+                    <a className="collapse-item" href="/manufacturer/mazda">Mazda</a>
+                    <a className="collapse-item" href="/manufacturer/mercedes">Mercedes</a>
+                    <a className="collapse-item" href="/manufacturer/opel">Opel</a>
+                    <a className="collapse-item" href="/manufacturer/peugeot">Peugeot</a>
+                    <a className="collapse-item" href="/manufacturer/renault">Renault</a>
+                    <a className="collapse-item" href="/manufacturer/seat">Seat</a>
+                    <a className="collapse-item" href="/manufacturer/vw">VW</a>
                 </div>
             </div>
         </li>
@@ -58,7 +58,7 @@ function Sidebar() {
             <div id="collapseUtilities" className="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
                 <div className="bg-white py-2 collapse-inner rounded">
-                    <a className="collapse-item" href="/yt">YouTube video</a>
+                    <a className="collapse-item" href="/upload">Upload post</a>
                     <a className="collapse-item" href="/diy">DIY solution</a>
                     <a className="collapse-item" href="/dtc">Fault codes and test </a>
                     <a className="collapse-item" href="/p">Programming</a>
