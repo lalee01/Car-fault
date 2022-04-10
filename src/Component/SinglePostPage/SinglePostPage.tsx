@@ -4,9 +4,8 @@ import './../../css/sb-admin-2.min.css'
 import './../../vendor/fontawesome-free/css/all.min.css'
 import axios from 'axios'
 import {
-    BrowserRouter as Router,
     useParams
-  } from "react-router-dom";
+  } from "react-router";
 
 function Content() {
     const [listPost , setListPost] = useState([])

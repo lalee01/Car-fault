@@ -15,7 +15,7 @@ import {
 } from "react-router-dom"
 
     function Homepage() {
-    const selectedPostID = useParams()
+
     return (
       <BrowserRouter>
         <div>
@@ -30,7 +30,6 @@ import {
                                 </div>
                                 <Routes>
                                     <Route path="/"element={<Content />}/>
-                                    <Route path="/manufacturer/:manufacturer" element={<SinglePostPage />}/>
                                     <Route path="/post/:postid" element={<SinglePostPage />}/>
                                     <Route path="/upload" element={<Postpage />}/>
                                     <Route path="*" element={<ErrorPage />}/>

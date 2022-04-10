@@ -6,7 +6,6 @@ import axios from 'axios'
 import { useParams } from 'react-router'
 import {
     BrowserRouter as Router,
-    Switch,
     Route,
     Link,
   } from "react-router-dom";
