@@ -5,6 +5,7 @@ import Sidebar from './../Sidebar/Sidebar'
 import Content from './../Content/Content'
 import Topbar from './../Topbar/Topbar'
 import SinglePostPage from './../SinglePostPage/SinglePostPage'
+import SelectedByManufacturer from '../SelectedByManufacturer/SelectedByManufacturer'
 import Postpage from '../Postpage/Postpage'
 import ErrorPage from '../ErrorPage/ErrorPage'
 import { useParams } from 'react-router'
@@ -31,7 +32,7 @@ import {
                                 </div>
                                 <Routes>
                                     <Route path="/"element={<Content />}/>
-                                    <Route path="/manufacturer/:manufacturer" element={<SinglePostPage />}/>
+                                    <Route path="/manufacturer/:manufacturer" element={<SelectedByManufacturer />}/>
                                     <Route path="/post/:postid" element={<SinglePostPage />}/>
                                     <Route path="/upload" element={<Postpage />}/>
                                     <Route path="*" element={<ErrorPage />}/>
