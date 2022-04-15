@@ -35,7 +35,7 @@ function SelectedByManufacturer() {
                           <div className="text-center">
                         <img style={{maxWidth: '30%'}}src={`${process.env.REACT_APP_ServerUrl}/${val.name[0]}`}></img>
                         </div>
-                        <p>{val.description}
+                        <p>{val.description.substr( 0 , 32 )}...
                         </p>
                         <Link to={`/post/${val.postid}`}><div id={val.postid} className="btn btn-light btn-icon-split">
                             <span className="icon text-white-50 noClick ">

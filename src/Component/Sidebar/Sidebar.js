@@ -1,4 +1,4 @@
-import react from 'react'
+import react , {useState} from 'react'
 import './../../css/sb-admin-2.css'
 import './../../css/sb-admin-2.min.css'
 import './../../vendor/fontawesome-free/css/all.min.css'
@@ -6,6 +6,11 @@ import './../../vendor/jquery/jquery.min.js'
 import './../../vendor/bootstrap/js/bootstrap.bundle.min.js'
 
 function Sidebar() {
+
+    const [select,setSelect] = useState("")
+
+    const onMouseSelect = (e) =>{setSelect(e.target.id)}
+    console.log(select)
 
     return (
      <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -33,19 +38,19 @@ function Sidebar() {
             <span>Manufacturer</span>
             </a>
             <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div className="bg-white py-2 collapse-inner rounded">
-                    <a className="collapse-item" href="/manufacturer/audi">Audi</a>
-                    <a className="collapse-item" href="/manufacturer/bmw">BMW</a>
-                    <a className="collapse-item" href="/manufacturer/citroen">Citroen</a>
-                    <a className="collapse-item" href="/manufacturer/fiat">Fiat</a>
-                    <a className="collapse-item" href="/manufacturer/ford">Ford</a>
-                    <a className="collapse-item" href="/manufacturer/mazda">Mazda</a>
-                    <a className="collapse-item" href="/manufacturer/mercedes">Mercedes</a>
-                    <a className="collapse-item" href="/manufacturer/opel">Opel</a>
-                    <a className="collapse-item" href="/manufacturer/peugeot">Peugeot</a>
-                    <a className="collapse-item" href="/manufacturer/renault">Renault</a>
-                    <a className="collapse-item" href="/manufacturer/seat">Seat</a>
-                    <a className="collapse-item" href="/manufacturer/vw">VW</a>
+                <div className="bg-white py-2 collapse-inner rounded" >
+                    <a className="collapse-item" href="/manufacturer/audi" id="audi" onMouseEnter={onMouseSelect} >Audi</a>
+                    <a className="collapse-item" href="/manufacturer/bmw" id="bmw" onMouseEnter={onMouseSelect}>BMW</a>
+                    <a className="collapse-item" href="/manufacturer/citroen" id="citroen" onMouseEnter={onMouseSelect}>Citroen</a>
+                    <a className="collapse-item" href="/manufacturer/fiat" id="fiat" onMouseEnter={onMouseSelect}>Fiat</a>
+                    <a className="collapse-item" href="/manufacturer/ford" id="ford" onMouseEnter={onMouseSelect}>Ford</a>
+                    <a className="collapse-item" href="/manufacturer/mazda" id="mazda" onMouseEnter={onMouseSelect}>Mazda</a>
+                    <a className="collapse-item" href="/manufacturer/mercedes" id="mercedes" onMouseEnter={onMouseSelect}>Mercedes</a>
+                    <a className="collapse-item" href="/manufacturer/opel" id="opel" onMouseEnter={onMouseSelect}>Opel</a>
+                    <a className="collapse-item" href="/manufacturer/peugeot" id="peugeot" onMouseEnter={onMouseSelect}>Peugeot</a>
+                    <a className="collapse-item" href="/manufacturer/renault" id="renault" onMouseEnter={onMouseSelect}>Renault</a>
+                    <a className="collapse-item" href="/manufacturer/seat" id="seat" onMouseEnter={onMouseSelect}>Seat</a>
+                    <a className="collapse-item" href="/manufacturer/vw" id="vw" onMouseEnter={onMouseSelect}>VW</a>
                 </div>
             </div>
         </li>

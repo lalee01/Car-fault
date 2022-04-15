@@ -14,7 +14,6 @@ import {
 function Content() {
     const [listPost , setListPost] = useState([])
     const {postid} = useParams()
-    const {manufacturer} = useParams()
 
     useEffect(()=>{
         axios.get(`${process.env.REACT_APP_ServerUrl}/post/${postid}`).then((response) =>setListPost(response.data))

@@ -13,38 +13,25 @@ import {
 
 function Content() {
 
-    const [listPost , setListPost] = useState([])
+    const [postCount , setpostCount] = useState([])
 
     useEffect(()=>{
-        axios.get(`${process.env.REACT_APP_ServerUrl}/getposts`).then((response) =>setListPost(response.data))
+        axios.get(`${process.env.REACT_APP_ServerUrl}/counter`).then((response) =>setpostCount(response.data))
         }
       ,[])
+
     return (
-        <div className='row'> 
-        {listPost.map((val)=>{
-            return (
-            <div className="col-lg-6 mb-4">
-                <div className="card shadow mb-4">
-                    <div className="card-header py-3">
-                        <h6 className="m-0 font-weight-bold text-primary">{val.title} {val.manufacturer} {val.model} </h6>
-                    </div>
-                    <div className="card-body">
-                          <div className="text-center">
-                        <img style={{maxWidth: '30%'}}src={`${process.env.REACT_APP_ServerUrl}/${val.name[0]}`}></img>
-                        </div>
-                        <p>{val.description}
-                        </p>
-                        <Link to={`/post/${val.postid}`}><div id={val.postid} className="btn btn-light btn-icon-split">
-                            <span className="icon text-white-50 noClick ">
-                                <i className="fas fa-arrow-right noClick"></i>
-                            </span>
-                            <span className="text noClick">Read More</span>
-                        </div></Link>
+        <div>  
+            <div className="card shadow mb-4">
+                <div className="card-header py-3">
+                    <h1 className="m-0 font-weight-bold text-primary text-center">Welcome</h1>
+                </div>
+                <h1 className='mt-3 text-center'>We have {postCount} post on the site</h1>
+                <div className="card-body">
+                    <div className="text-center">
                     </div>
                 </div>
-            </div>
-            )
-        })} 
+            </div>    
         </div>
     );
 }

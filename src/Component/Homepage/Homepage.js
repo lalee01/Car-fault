@@ -6,9 +6,8 @@ import Content from './../Content/Content'
 import Topbar from './../Topbar/Topbar'
 import SinglePostPage from './../SinglePostPage/SinglePostPage'
 import SelectedByManufacturer from '../SelectedByManufacturer/SelectedByManufacturer'
-import Postpage from '../Postpage/Postpage'
+import Sendpostpage from '../Sendpostpage/Sendpostpage'
 import ErrorPage from '../ErrorPage/ErrorPage'
-import { useParams } from 'react-router'
 import {
     BrowserRouter,
     Routes,
@@ -17,7 +16,7 @@ import {
   } from "react-router-dom"
 
     function Homepage() {
-    const selectedPostID = useParams()
+
     return (
       <BrowserRouter>
         <div>
@@ -34,7 +33,7 @@ import {
                                     <Route path="/"element={<Content />}/>
                                     <Route path="/manufacturer/:manufacturer" element={<SelectedByManufacturer />}/>
                                     <Route path="/post/:postid" element={<SinglePostPage />}/>
-                                    <Route path="/upload" element={<Postpage />}/>
+                                    <Route path="/upload" element={<Sendpostpage />}/>
                                     <Route path="*" element={<ErrorPage />}/>
                                 </Routes>                               
                             </div> 
